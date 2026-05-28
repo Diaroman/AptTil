@@ -1,6 +1,6 @@
 AptTil
 
-Distribution repository for approved update packages of Apteekin Tilausehdotus.
+Distribution repository for approved update packages of Apteekin Tilausehdotus system
 
 Purpose
 
