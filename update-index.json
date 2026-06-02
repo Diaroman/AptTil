@@ -16,12 +16,12 @@
                                     "channel":  "test",
                                     "tag":  "v1.0.16",
                                     "package":  "AptTil_Portable_v.1.0.16.zip",
-                                    "package_sha256":  "ff0ad41e3e46710eff35a7f78c0cc6cdd1de80990c0ed4c916f3931e4f24118a",
+                                    "package_sha256":  "cdc240cfe71b46a03e66f41f18e17dd89b6fa14d1e8482fe676571637cafc2b1",
                                     "legacy_manifest":  "manifest.json",
                                     "legacy_signature":  "manifest.sig",
                                     "manifest":  "apttil-update-manifest.json",
                                     "manifest_sha256_file":  "apttil-update-manifest.sha256",
-                                    "manifest_sha256":  "fe6e83e40c5f6935a4ace30143f92518e884592ad20a1c67f7ec895a8011176f",
+                                    "manifest_sha256":  "5b08ec8d4c49617ef56cb2b60f128cae3a1dbba6774c7ecf8e990cb1a4ac0e8f",
                                     "notes":  "release_notes_v1.0.16.txt",
                                     "visible_test_change":  "red_web_background"
                                 }
