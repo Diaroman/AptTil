@@ -1,0 +1,27 @@
+{
+    "schema":  "apttil-update-index-1",
+    "latest_stable":  "1.0.15",
+    "latest_test":  "1.0.16",
+    "minimum_supported":  "1.0.15",
+    "revoked_versions":  [
+
+                         ],
+    "default_channel":  "test",
+    "repositories":  {
+                         "builder":  "Diaroman/AptTil-Builder",
+                         "public_update":  "Diaroman/AptTil"
+                     },
+    "releases":  {
+                     "1.0.16":  {
+                                    "channel":  "test",
+                                    "tag":  "v1.0.16",
+                                    "package":  "AptTil_Portable_v.1.0.16.zip",
+                                    "package_sha256":  "cb7f09ad0671ff2430cbce3d4d4e9f06005b869191859864e81b32cd51d45f71",
+                                    "manifest":  "apttil-update-manifest.json",
+                                    "manifest_sha256_file":  "apttil-update-manifest.sha256",
+                                    "manifest_sha256":  "43e45c7bdc352a8530a989b24d9e1d02f015ed9d82a6d396fb84c77590db1e71",
+                                    "notes":  "release_notes_v1.0.16.txt",
+                                    "visible_test_change":  "red_web_background"
+                                }
+                 }
+}
