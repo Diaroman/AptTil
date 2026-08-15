@@ -1,0 +1,59 @@
+name: Validate distribution gateway
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Validate public files and indexes
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import pathlib
+          import re
+
+          root = pathlib.Path('.')
+          for path in root.rglob('*.json'):
+              if '.git' not in path.parts:
+                  json.loads(path.read_text(encoding='utf-8-sig'))
+
+          legacy = json.loads(pathlib.Path('update-index.json').read_text(encoding='utf-8-sig'))
+          if legacy.get('schema') != 'apttil-update-index-1':
+              raise SystemExit('Legacy index changed schema unexpectedly')
+
+          modern = pathlib.Path('update-index-v4.json')
+          if modern.exists():
+              value = json.loads(modern.read_text(encoding='utf-8-sig'))
+              if value.get('schema') != 'apttil-update-index-4':
+                  raise SystemExit('Unsupported v4 index schema')
+              if not value.get('channels'):
+                  raise SystemExit('v4 index has no channels')
+              semver = re.compile(r'^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?$')
+              for channel, release in value['channels'].items():
+                  if channel not in {'test', 'stable'} or not semver.fullmatch(str(release.get('version', ''))):
+                      raise SystemExit(f'Invalid channel entry: {channel}')
+                  if release.get('manifest') != 'manifest-v4.json' or release.get('signature') != 'manifest-v4.sig':
+                      raise SystemExit(f'Invalid release asset names: {channel}')
+          PY
+      - name: Keep binaries and secrets out of repository history
+        shell: bash
+        run: |
+          forbidden=$(git ls-files | grep -Ei '\.(zip|exe|dll|pfx|pem|key|snk)$' || true)
+          if [ -n "$forbidden" ]; then
+            echo "$forbidden"
+            echo 'Binary release assets and secrets belong in GitHub Releases or protected secrets.' >&2
+            exit 1
+          fi
+

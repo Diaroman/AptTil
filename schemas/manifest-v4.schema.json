@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Diaroman/AptTil/schemas/manifest-v4.schema.json",
+  "title": "AptTil signed release manifest v4",
+  "type": "object",
+  "required": [
+    "schema", "version", "channel", "mode", "minimum_version",
+    "minimum_updater", "package", "files", "delete", "preserve"
+  ],
+  "properties": {
+    "schema": {"const": "apttil-release-manifest-4"},
+    "version": {"type": "string"},
+    "channel": {"const": "any"},
+    "mode": {"enum": ["web", "defaults", "runtime", "core", "full", "components"]},
+    "components": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "component_versions": {"type": "object"},
+    "minimum_version": {"type": "string"},
+    "minimum_updater": {"type": "string"},
+    "package": {
+      "type": "object",
+      "required": ["name", "sha256", "bytes"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[^/\\\\]+\\.zip$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 1}
+      }
+    },
+    "files": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "delete": {"type": "array", "items": {"type": "string"}},
+    "preserve": {"type": "array", "items": {"type": "string"}},
+    "requires_restart": {"type": "boolean"}
+  }
+}
+

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Diaroman/AptTil/schemas/update-index-v4.schema.json",
+  "title": "AptTil public update index v4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "channels", "minimum_supported", "revoked_versions"],
+  "properties": {
+    "schema": {"const": "apttil-update-index-4"},
+    "channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "test": {"$ref": "#/$defs/release"},
+        "stable": {"$ref": "#/$defs/release"}
+      }
+    },
+    "minimum_supported": {"$ref": "#/$defs/version"},
+    "revoked_versions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/version"},
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "tag", "manifest", "signature"],
+      "properties": {
+        "version": {"$ref": "#/$defs/version"},
+        "tag": {"type": "string", "minLength": 1},
+        "manifest": {"const": "manifest-v4.json"},
+        "signature": {"const": "manifest-v4.sig"}
+      }
+    }
+  }
+}
+
