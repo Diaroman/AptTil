@@ -17,3 +17,6 @@ workflows. Manual edits are reserved for documented recovery operations.
 The legacy index remains untouched until the migration plan explicitly retires
 the clients that depend on it.
 
+Signing-key rotation is delivered as an explicitly signed `trust` component. It
+is promoted like any other immutable candidate, but automatic rollback cannot
+cross the rotation boundary; recovery must be signed by the current key.

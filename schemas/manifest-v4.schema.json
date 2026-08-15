@@ -19,6 +19,17 @@
       "minItems": 1
     },
     "component_versions": {"type": "object"},
+    "trust_update": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "target", "sha256", "algorithm"],
+      "properties": {
+        "source": {"const": "trust/next_update_public_key.xml"},
+        "target": {"const": "config/update_public_key.xml"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "algorithm": {"const": "RSA-SHA256"}
+      }
+    },
     "minimum_version": {"type": "string"},
     "minimum_updater": {"type": "string"},
     "package": {
@@ -40,4 +51,3 @@
     "requires_restart": {"type": "boolean"}
   }
 }
-
