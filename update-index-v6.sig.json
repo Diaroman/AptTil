@@ -1,0 +1,12 @@
+{
+  "schema": "aptutil-detached-signature-1",
+  "role": "index",
+  "signed_sha256": "545e9bcbcde27393506caf708cd18524e46b932eff9cf007e8107ab2b5b3da8c",
+  "signatures": [
+    {
+      "key_id": "316550e09364599d939e271b28c825a47fb2c58c3cd714558b6468f64a3b02cf",
+      "algorithm": "RS256",
+      "value": "ThofzUMac9qY3TXR-LHLoSfF4cnX-IxdIJ9IFva_WzZQQuNbOrzS3mWIOXpzOF-ZNF3IOqBHjlHOesV-SYp71_AOPmTjA8Wo59bx7OAFhByxsq3tbDlJl4yk6adxvhlewEtv3hnv4s6SUtHnkcPr0v7EU7ZurF0KB8vS6Dtl2T3PE9RK1Jypb0bCrrrrUJCEB7oab1mQLwDTC_yTDIIOLWK81reAkLQM6SLUXg_vTfqWG06ipuvhEC6LzjVIR8tQb6VXO7SmQLvuSyOmD1Oew9ctchXlsIZuMv7gJCJpMxlHnyGxEjJNCAIWn6GSznTVV9yMyMyTey8lXTawMFtpVnkGssBuWskMgNn2w5BpFZoS-JzRi3mCSuOQcdOjbk9a9X_YSjnShlii66Qhi1B8XZ8KkJAxvh1abfVT0svrntH6X5F_hDaxiqWcpgv81w4e46Vr3xA-JUCrlNlBSI7630gRkcfvSejw7hzBXMHoQFMxcruQKFfaBWNFXyxsrP7e"
+    }
+  ]
+}
