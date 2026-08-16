@@ -1,9 +1,13 @@
 # Security and privacy
 
 Do not open a public issue containing credentials, private keys, pharmacy data,
-or exploitable update details. Contact the repository owner privately.
+or exploitable update details. Report those privately to the
+`PharmUtilities/AptUtil` repository owner.
 
-Release indexes are routing metadata, not trust anchors. Supported clients accept
-an update only after signature, package, and per-file verification. Report data
-is processed locally and must never be uploaded here.
+Supported clients require both the v6 index signature and release-manifest
+signature, followed by package and per-file verification. Offline root keys are
+not stored in either GitHub repository. Report data is processed locally and
+must never be uploaded here.
 
+The historical unsigned `update-index.json` is retained only as migration
+evidence and must not be used by current clients.
