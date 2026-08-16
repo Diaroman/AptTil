@@ -1,0 +1,12 @@
+{
+  "schema": "aptutil-detached-signature-1",
+  "role": "index",
+  "signed_sha256": "e1b84c615b22a0b3088e031885c65b4754c1861cf6c9454fa1995860eb4b2227",
+  "signatures": [
+    {
+      "key_id": "316550e09364599d939e271b28c825a47fb2c58c3cd714558b6468f64a3b02cf",
+      "algorithm": "RS256",
+      "value": "sVh7PpPyKb6NqNnDU2X0JRkxUM4zANIkiffLJO1OuHa-4Nr6HzSYL5RB0vU3Jw_DKuurat8JiCu0ix-QuU2tkettpDUP0Wr7RIdLo0kkQmibCPSnpecYhSAhR36IOEZoUn147Z1DRErqzMvlJoXzf5-mBwWhq0LF4H58GkjOak3tYo09nuBoMp4iVhsBCrqmwHuKiYUcsJ5X8cQ3n0DoPpwaPWJ3cLd0tT_qTVDJ-XuAIjnvg817crRWVxDOzmwTrdyp0RRfyARHudRvrkajni5_hysXt69_fE2QMNBUUYhn9btMt1DAcgl7iwwFOVF-HkSAt6b-00cRrK5YJjfUWLE_xfuE0s7Dwny38Cn2KlW601cvmHevN09RxFeQ5MAl-3bHjHPWXgy5QunROnF5VOz08dkZpKDo8OfQUbcsIt6BpJYkYU5vvvXMyJWjYRXs6ufgnaIoMv-_VRkHD40NgtTiDLE2b_oYUT0YzQHqVEQsE7rJ5oyJKVEN3Q1879vs"
+    }
+  ]
+}
